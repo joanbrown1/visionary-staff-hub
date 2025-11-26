@@ -47,10 +47,10 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="space-y-8 py-6">
+    <div className="space-y-6 sm:space-y-8 py-4 sm:py-6">
       {/* Hero Carousel */}
-      <div className="relative rounded-3xl overflow-hidden glass-card animate-scale-in group">
-        <div className="relative h-64 md:h-96">
+      <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden glass-card animate-scale-in group">
+        <div className="relative h-56 sm:h-64 md:h-96">
           <img
             src={carouselImages[currentSlide]}
             alt="Slide"
@@ -58,11 +58,11 @@ export default function Dashboard() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent" />
           
-          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-2">
+          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-foreground mb-1 sm:mb-2">
               Welcome to BLW Portal
             </h2>
-            <p className="text-foreground/80 text-sm md:text-base">
+            <p className="text-foreground/80 text-xs sm:text-sm md:text-base">
               Your modern enterprise platform for seamless collaboration
             </p>
           </div>
@@ -100,19 +100,19 @@ export default function Dashboard() {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 animate-slide-up">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 animate-slide-up">
         {statsCards.map((stat, idx) => (
           <Card
             key={idx}
-            className="glass-card p-6 hover:scale-105 transition-smooth cursor-pointer border-border/30"
+            className="glass-card p-4 sm:p-6 hover:scale-105 transition-smooth cursor-pointer border-border/30"
           >
-            <div className="flex items-center gap-4">
-              <div className={`p-3 rounded-2xl bg-primary/10 ${stat.color}`}>
-                <stat.icon className="h-6 w-6" />
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className={`p-2 sm:p-3 rounded-xl sm:rounded-2xl bg-primary/10 ${stat.color}`}>
+                <stat.icon className="h-5 w-5 sm:h-6 sm:w-6" />
               </div>
               <div>
-                <p className="text-2xl font-bold">{stat.value}</p>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
+                <p className="text-xl sm:text-2xl font-bold">{stat.value}</p>
+                <p className="text-xs sm:text-sm text-muted-foreground">{stat.label}</p>
               </div>
             </div>
           </Card>

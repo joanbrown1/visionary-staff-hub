@@ -16,8 +16,9 @@ export const Layout = ({ children }: LayoutProps) => {
       
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       
-      <main className="pt-16 pb-20 md:pb-8 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="animate-fade-in">
+      {/* Add left margin on desktop to account for sidebar */}
+      <main className="pt-16 pb-20 md:pb-8 md:ml-72 px-4 md:px-6 lg:px-8 transition-all duration-300">
+        <div className="max-w-6xl mx-auto animate-fade-in">
           {children}
         </div>
       </main>
